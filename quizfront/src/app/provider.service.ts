@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {MainService} from './main.service';
 import {HttpClient} from '@angular/common/http';
-import {ITask, ITaskList} from '../models/models';
+import {IPost, IUser} from './models/models';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,8 @@ export class ProviderService extends MainService {
     super(http);
   }
 
-  getTaskLists(): Promise<ITaskList[]> {
-    return this.get('http://127.0.0.1:8000/api/task_lists', {});
+  getTaskLists(): Promise<IUser[]> {
+    return this.get('http://127.0.0.1:8000/api/post', {});
   }
 
 
