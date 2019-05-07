@@ -1,1 +1,68 @@
-<app-main></app-main>
+
+
+<h1>Contacts</h1>
+
+<body>
+<div *ngIf = "!bool; else unset">
+<div *ngIf = "!submitted; else unset">
+<div>
+  <label>
+    Username:
+    <input #username>
+  </label>
+  <label>
+    Email:
+    <input #email>
+  </label>
+  <label>
+    Password:
+    <input #password>
+  </label>
+  <label>
+    <button (click)= "auth(username.value, email.value, password.value); username.value=''; email.value=''; password.value ='' ">Зарегистрироваться</button>
+  </label>
+</div></div>
+<div><div *ngIf="submitted">
+  <ul *ngIf = "ath; else unset">
+    <div>
+    Вы зарегистрировались!
+  </div>
+    <p>Name : {{ ath.username}} Email: {{ath.email}}</p>
+  </ul>
+  <ul *ngIf = "status; else unset">
+    Неправильнй формат логина или пароля!
+  </ul>
+</div>
+</div>
+
+<div *ngIf = "!enter; else unset">
+<div>
+  <label>
+    Username:
+    <input #username>
+  </label>
+  <label>
+    Password:
+    <input #password>
+  </label>
+  <label>
+    <button (click)= "login(username.value, password.value); username.value=''; password.value ='' ">Зайти</button>
+  </label>
+</div></div>
+<div><div *ngIf="enter">
+  <ul *ngIf = "ath; else unset">
+    <div>
+    Вы зашли!
+  </div>
+  </ul>
+  <ul *ngIf = "status; else unset">
+    Неправильный логин или пароль!
+  </ul>
+</div>
+</div>
+</div>
+
+<div *ngIf = "bool; else unset">
+  
+</div>
+</body>
